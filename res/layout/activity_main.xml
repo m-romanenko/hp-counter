@@ -222,7 +222,7 @@
             android:layout_marginLeft="@dimen/button_side_margin"
             android:layout_marginRight="@dimen/button_side_margin"
             android:layout_marginTop="@dimen/vertical_small"
-            android:onClick="endRound"
+            android:onClick="endTurn"
             android:text="@string/end_round" />
 
         <Button

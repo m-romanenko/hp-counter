@@ -6,6 +6,7 @@
     <color name="colorScore">#000000</color>
     <color name="colorChamp">#363333</color>
     <color name="colorButtonNormal">#424242</color>
+    <color name="colorButtonText">#BDBDBD</color>
 
 
 </resources>

@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     int priestHP;
     int warriorArmor;
     int priestArmor;
-    boolean warriorsRound;
+    boolean warriorsTurn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private void initValues() {
         warriorHP = priestHP = 30;
         warriorArmor = priestArmor = 0;
-        warriorsRound = (new Random()).nextBoolean();
-        nextRound();
+        warriorsTurn = (new Random()).nextBoolean();
+        nextTurn();
     }
 
     public void newGame(View v) {
@@ -127,8 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void priestSpell(View v) {
 
-        Random rn = new Random();
-        int spell = rn.nextInt(2);
+        int spell = (new Random()).nextInt(2);
 
         if (spell == 1) {
             // get +3 armor and deal 3 damage
@@ -153,12 +152,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void warriorSpell(View v) {
 
-        Random rn = new Random();
-        int spell = rn.nextInt(2);
+        int spell = (new Random()).nextInt(2);
 
         if (spell == 1) {
             // deal 2 damage to a random player
-            if (rn.nextBoolean()) {
+            if ((new Random()).nextBoolean()) {
                 dealDamage("Warrior", 2);
                 Toast.makeText(this, "You deal 2 damage to yourself!", Toast.LENGTH_SHORT).show();
             } else {
@@ -180,21 +178,21 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.warrior_spell).setEnabled(false);
     }
 
-    public void endRound(View v) {
-        nextRound();
+    public void endTurn(View v) {
+        nextTurn();
     }
 
-    private void nextRound() {
+    private void nextTurn() {
 
-        warriorsRound = !warriorsRound;
+        warriorsTurn = !warriorsTurn;
 
-        findViewById(R.id.priest_spell).setEnabled(!warriorsRound);
-        findViewById(R.id.priest_attack).setEnabled(!warriorsRound);
-        findViewById(R.id.priest_heal).setEnabled(!warriorsRound);
+        findViewById(R.id.priest_spell).setEnabled(!warriorsTurn);
+        findViewById(R.id.priest_attack).setEnabled(!warriorsTurn);
+        findViewById(R.id.priest_heal).setEnabled(!warriorsTurn);
 
-        findViewById(R.id.warrior_spell).setEnabled(warriorsRound);
-        findViewById(R.id.warrior_attack).setEnabled(warriorsRound);
-        findViewById(R.id.warrior_add_armor).setEnabled(warriorsRound);
+        findViewById(R.id.warrior_spell).setEnabled(warriorsTurn);
+        findViewById(R.id.warrior_attack).setEnabled(warriorsTurn);
+        findViewById(R.id.warrior_add_armor).setEnabled(warriorsTurn);
 
     }
 

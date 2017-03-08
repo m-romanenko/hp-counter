@@ -6,7 +6,7 @@
     <string name="priest">Priest</string>
     <string name="add_2_armor">add 2 armor</string>
     <string name="warrior">Warrior</string>
-    <string name="end_round">End round</string>
+    <string name="end_round">End turn</string>
     <string name="new_game">New Game</string>
     <string name="warrior_wins">Warrior wins!</string>
     <string name="priest_wins">Priest wins!</string>
