@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         // deal from 1 to 5 dmg
         Random rn = new Random();
         int strike = rn.nextInt(5) + 1;
-        dealDamage("Warrior", strike);
         Toast.makeText(this, "You deal " + strike + " damage to Warrior!", Toast.LENGTH_SHORT).show();
+        dealDamage("Warrior", strike);
         findViewById(R.id.priest_attack).setEnabled(false);
     }
 
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         // deal from 1 to 5 dmg
         Random rn = new Random();
         int strike = rn.nextInt(5) + 1;
-        dealDamage("Priest", strike);
         Toast.makeText(this, "You deal " + strike + " damage to Priest!", Toast.LENGTH_SHORT).show();
+        dealDamage("Priest", strike);
         findViewById(R.id.warrior_attack).setEnabled(false);
     }
 
