@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         initValues();
         displayForWarrior(warriorHP, warriorArmor);
         displayForPriest(priestHP, priestArmor);
+        findViewById(R.id.end_round).setEnabled(true);
     }
 
     public void priestAttack(View v) {
@@ -195,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.warrior_spell).setEnabled(warriorsTurn);
         findViewById(R.id.warrior_attack).setEnabled(warriorsTurn);
         findViewById(R.id.warrior_add_armor).setEnabled(warriorsTurn);
+
 
     }
 
