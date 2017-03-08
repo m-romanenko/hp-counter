@@ -131,20 +131,22 @@ public class MainActivity extends AppCompatActivity {
 
         if (spell == 1) {
             // get +3 armor and deal 3 damage
+            Toast.makeText(this, "You gain 3 Armor and deal 3 damage to Warrior!", Toast.LENGTH_SHORT).show();
             priestArmor += 3;
             displayForPriest(priestHP, priestArmor);
             dealDamage("Warrior", 3);
-            Toast.makeText(this, "You gain 3 Armor and deal 3 damage to Warrior!", Toast.LENGTH_SHORT).show();
+
         } else if (spell == 2) {
             // deal 5 damage to both players
+            Toast.makeText(this, "You deal 5 damage to both players!", Toast.LENGTH_SHORT).show();
             dealDamage("Warrior", 5);
             dealDamage("Priest", 5);
-            Toast.makeText(this, "You deal 5 damage to both players!", Toast.LENGTH_SHORT).show();
         } else {
             // remove opponent's armor
+            Toast.makeText(this, "You remove Warrior's Armor!", Toast.LENGTH_SHORT).show();
             warriorArmor = 0;
             displayForWarrior(warriorHP, warriorArmor);
-            Toast.makeText(this, "You remove Warrior's Armor!", Toast.LENGTH_SHORT).show();
+
         }
 
         findViewById(R.id.priest_spell).setEnabled(false);
@@ -157,22 +159,22 @@ public class MainActivity extends AppCompatActivity {
         if (spell == 1) {
             // deal 2 damage to a random player
             if ((new Random()).nextBoolean()) {
-                dealDamage("Warrior", 2);
                 Toast.makeText(this, "You deal 2 damage to yourself!", Toast.LENGTH_SHORT).show();
+                dealDamage("Warrior", 2);
             } else {
-                dealDamage("Priest", 2);
                 Toast.makeText(this, "You deal 2 damage to Priest!", Toast.LENGTH_SHORT).show();
+                dealDamage("Priest", 2);
             }
 
         } else if (spell == 2) {
             // get +5 armor
+            Toast.makeText(this, "You gain 5 Armor!", Toast.LENGTH_SHORT).show();
             warriorArmor += 5;
             displayForWarrior(warriorHP, warriorArmor);
-            Toast.makeText(this, "You gain 5 Armor!", Toast.LENGTH_SHORT).show();
         } else {
             // deal 4 dmg to opponent
-            dealDamage("Priest", 4);
             Toast.makeText(this, "You deal 4 damage to Priest!", Toast.LENGTH_SHORT).show();
+            dealDamage("Priest", 4);
         }
 
         findViewById(R.id.warrior_spell).setEnabled(false);
