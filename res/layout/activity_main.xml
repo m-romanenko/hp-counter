@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkg"
+    tools:context="com.example.android.hpcounter.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/vertical_small"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/vertical_small"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="@string/warrior"
+                android:textColor="@color/colorChamp"
+                android:textSize="@dimen/txt_champ" />
+
+            <ImageView
+                android:id="@+id/warrior_crest"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_h"
+                android:src="@drawable/warrior_crest" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/vertical_medium"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/warrior_hp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/heart"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:text="30"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorScore"
+                    android:textSize="@dimen/score" />
+
+                <TextView
+                    android:id="@+id/warrior_armor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/shield"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:text="0"
+                    android:textColor="@color/colorScore"
+                    android:textSize="@dimen/score" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/warrior_attack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/vertical_small"
+                android:layout_marginLeft="@dimen/button_side_margin"
+                android:layout_marginRight="@dimen/button_side_margin"
+                android:onClick="warriorAttack"
+                android:text="@string/attack" />
+
+            <Button
+                android:id="@+id/warrior_add_armor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/vertical_small"
+                android:layout_marginLeft="@dimen/button_side_margin"
+                android:layout_marginRight="@dimen/button_side_margin"
+                android:onClick="warriorGetArmor"
+                android:text="@string/add_2_armor" />
+
+            <Button
+                android:id="@+id/warrior_spell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/vertical_small"
+                android:layout_marginLeft="@dimen/button_side_margin"
+                android:layout_marginRight="@dimen/button_side_margin"
+                android:onClick="warriorSpell"
+                android:text="@string/cast_spell" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/vertical_medium"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_small"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:text="@string/priest"
+                android:textColor="@color/colorChamp"
+                android:textSize="@dimen/txt_champ" />
+
+            <ImageView
+                android:id="@+id/priest_crest"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_h"
+                android:src="@drawable/priest_crest" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/vertical_medium"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/priest_hp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/heart"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:text="30"
+                    android:textColor="@color/colorScore"
+                    android:textSize="@dimen/score" />
+
+                <TextView
+                    android:id="@+id/priest_armor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/shield"
+                    android:drawableStart="@drawable/shield"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:text="0"
+                    android:textColor="@color/colorScore"
+                    android:textSize="@dimen/score" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/priest_attack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/vertical_small"
+                android:layout_marginLeft="@dimen/button_side_margin"
+                android:layout_marginRight="@dimen/button_side_margin"
+                android:onClick="priestAttack"
+                android:text="@string/attack" />
+
+            <Button
+                android:id="@+id/priest_heal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/vertical_small"
+                android:layout_marginLeft="@dimen/button_side_margin"
+                android:layout_marginRight="@dimen/button_side_margin"
+                android:onClick="priestHeal"
+                android:text="@string/heal_2_hp" />
+
+            <Button
+                android:id="@+id/priest_spell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/vertical_small"
+                android:layout_marginLeft="@dimen/button_side_margin"
+                android:layout_marginRight="@dimen/button_side_margin"
+                android:onClick="priestSpell"
+                android:text="@string/cast_spell" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/vertical_large"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/end_round"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/vertical_small"
+            android:layout_marginLeft="@dimen/button_side_margin"
+            android:layout_marginRight="@dimen/button_side_margin"
+            android:layout_marginTop="@dimen/vertical_small"
+            android:onClick="endRound"
+            android:text="@string/end_round" />
+
+        <Button
+            android:id="@+id/new_game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/button_side_margin"
+            android:layout_marginRight="@dimen/button_side_margin"
+            android:onClick="newGame"
+            android:text="@string/new_game" />
+    </LinearLayout>
+
+
+</RelativeLayout>
